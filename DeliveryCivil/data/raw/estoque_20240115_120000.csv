@@ -1,0 +1,16 @@
+produto_id,produto_nome,quantidade_atual,quantidade_minima,custo_unitario
+1,Cimento CP-II 50kg,45,50,20.00
+2,Furadeira Bosch 650W,3,5,150.00
+3,Tinta Látex Branca 18L,8,10,60.00
+4,Parafusadeira Makita,2,8,250.00
+5,Tubo PVC 100mm,120,100,15.00
+6,Areia Lavada 20kg,85,150,7.00
+7,Tijolo Comum 9x19x19,2500,2000,4.50
+8,Argamassa Colante 20kg,35,50,25.00
+9,Rejunte Cerâmico 1kg,200,300,8.50
+10,Impermeabilizante 18L,12,15,100.00
+11,Serra Circular 1400W,5,10,280.00
+12,Cal Hidratada 20kg,150,200,18.00
+13,Martelo Demolidor 1500W,1,3,750.00
+14,Bloco Cerâmico 9x19x19,800,1000,1.80
+

@@ -1,0 +1,32 @@
+produto_id,produto_nome,quantidade_atual,quantidade_minima,custo_unitario
+1,Cimento,171,12,7.64
+2,Areia,53,18,5.42
+3,Tinta,187,30,67.84
+4,Telha,161,30,89.92
+5,Parafuso,52,3,84.38
+6,Prego,132,13,49.46
+7,Tubo PVC,160,14,33.05
+8,Cano de Cobre,71,28,67.75
+9,Argamassa,57,6,8.01
+10,Broxa,163,18,28.3
+11,Rolo de Pintura,98,6,96.1
+12,Fita Isolante,145,3,41.92
+13,Lixa,151,29,46.1
+14,Madeira,61,14,73.68
+15,Cola Branca,177,7,57.5
+16,Silicone,168,28,55.95
+17,Verniz,17,18,27.66
+18,Pa,139,13,34.54
+19,Carrinho de Mão,165,13,19.76
+20,Martelo,144,9,68.15
+21,Chave de Fenda,46,22,13.87
+22,Alicate,99,8,94.01
+23,Serrote,78,3,37.3
+24,Trena,163,30,33.01
+25,Capacete,175,4,53.16
+26,Luvas,113,11,84.74
+27,Tijolo,72,6,84.69
+28,Cimento Cola,173,26,39.66
+29,Cal,96,14,44.19
+30,Fio Eletrico,32,18,92.9
+

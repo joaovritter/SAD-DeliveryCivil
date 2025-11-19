@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Click Obra - Construction Marketplace Design System */
+
+@layer base {
+  :root {
+    /* Construction-themed color palette */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 25%;
+
+    /* Primary - Construction Orange */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 25 90% 60%;
+    
+    /* Secondary - Steel Blue */
+    --secondary: 210 50% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 210 45% 50%;
+
+    /* Accent - Warm Orange */
+    --accent: 20 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Construction grays */
+    --muted: 220 10% 95%;
+    --muted-foreground: 220 15% 45%;
+    --border: 220 15% 90%;
+    --input: 220 10% 97%;
+    --ring: 25 95% 53%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 25%;
+    --card-shadow: 220 25% 15%;
+
+    /* Success and warning */
+    --success: 120 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 100% 60%;
+    --warning-foreground: 220 15% 25%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)) 0%, hsl(220 10% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px hsl(var(--card-shadow) / 0.1);
+    --shadow-md: 0 4px 12px hsl(var(--card-shadow) / 0.15);
+    --shadow-lg: 0 8px 25px hsl(var(--card-shadow) / 0.2);
+    --shadow-primary: 0 4px 20px hsl(var(--primary) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 95%;
+    --primary: 25 95% 55%;
+    --secondary: 210 45% 45%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 65%;
+    --border: 220 15% 25%;
+    --input: 220 15% 15%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Construction Marketplace Specific Styles */
+  .click-obra-container {
+    @apply max-w-md mx-auto bg-background min-h-screen;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .construction-button {
+    @apply px-6 py-3 rounded-xl font-semibold text-center transition-all duration-300 active:scale-95;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+    color: hsl(var(--primary-foreground));
+  }
+
+  .construction-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .category-card {
+    @apply flex flex-col items-center p-4 rounded-xl transition-all duration-300 active:scale-95;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .category-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .product-card {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300 active:scale-95;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .search-input {
+    @apply w-full px-4 py-4 pl-12 rounded-xl border-2 border-transparent bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300;
+    font-size: 16px; /* Previne zoom no iOS */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-card border-t border-border px-2 py-3 z-50;
+    box-shadow: 0 -4px 20px hsl(var(--card-shadow) / 0.1);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-300 active:scale-95;
+    min-height: 56px;
+    min-width: 56px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-item.active {
+    @apply text-primary;
+    background: hsl(var(--primary) / 0.1);
+  }
+
+  .promo-banner {
+    @apply relative overflow-hidden rounded-xl;
+    background: var(--gradient-hero);
+  }
+
+  /* Animation classes */
+  .slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s var(--transition-bounce);
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse-primary {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+    }
+  }
+
+  .animate-pulse-primary {
+    animation: pulse-primary 2s infinite;
+  }
+
+  /* Power BI Embed Container */
+  .powerbi-embed-container {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Ajustes para o container de relatórios */
+  .click-obra-container main {
+    background-color: #f8f9fa;
+  }
+
+  /* Ajuste para 5 itens no menu */
+  .bottom-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .bottom-nav ul li {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Responsividade para telas menores */
+  @media (max-width: 480px) {
+    .nav-item span {
+      font-size: 10px;
+    }
+    
+    .nav-item svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
